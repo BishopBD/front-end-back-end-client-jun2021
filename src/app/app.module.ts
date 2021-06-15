@@ -16,6 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ParkEffects } from './effects/parks.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { OutingEntryComponent } from './components/outing-entry/outing-entry.component';
+import { OutingsEffects } from './effects/outings.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { OutingEntryComponent } from './components/outing-entry/outing-entry.com
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     ReactiveFormsModule,
-    EffectsModule.forRoot([ParkEffects]),
+    EffectsModule.forRoot([ParkEffects, OutingsEffects]),
     HttpClientModule,
 
   ],
