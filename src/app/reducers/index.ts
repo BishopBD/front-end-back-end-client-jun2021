@@ -47,3 +47,7 @@ export const selectParksComponentViewModel = createSelector(
 )
 
 
+export const selectParksForDropdown = createSelector(
+  selectParksModelArray,
+  (parks) => parks.map(p => ({ id: p.id, text: p.name }))
+)

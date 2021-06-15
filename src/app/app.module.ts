@@ -15,6 +15,7 @@ import { ParkListComponent } from './components/parks/park-list/park-list.compon
 import { EffectsModule } from '@ngrx/effects';
 import { ParkEffects } from './effects/parks.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { OutingEntryComponent } from './components/outing-entry/outing-entry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     ParksComponent,
     FourOhFourComponent,
     ParkListComponent,
+    OutingEntryComponent,
 
   ],
   imports: [
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     StoreDevtoolsModule.instrument(),
     ReactiveFormsModule,
     EffectsModule.forRoot([ParkEffects]),
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
