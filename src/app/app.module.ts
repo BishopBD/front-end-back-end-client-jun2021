@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ParkListComponent } from './components/parks/park-list/park-list.component';
 import { EffectsModule } from '@ngrx/effects';
 import { ParkEffects } from './effects/parks.effects';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { ParkEffects } from './effects/parks.effects';
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     ReactiveFormsModule,
-    EffectsModule.forRoot([ParkEffects])
+    EffectsModule.forRoot([ParkEffects]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

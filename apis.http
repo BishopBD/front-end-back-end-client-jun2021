@@ -1,0 +1,7 @@
+
+# To get a list of parks
+
+
+GET https://localhost:44332/references/parks
+Accept: application/json
+

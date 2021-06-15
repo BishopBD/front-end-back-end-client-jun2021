@@ -1,8 +1,9 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
-
+import { createReducer, Action, on } from '@ngrx/store';
+import * as actions from '../actions/parks.actions';
 export interface ParksModel {
   id: string;
+
   name: string;
   acreage: string;
   notes: string;
@@ -26,7 +27,8 @@ const initialState = adapter.getInitialState();
 // }
 
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.parksLoaded, (currentState, action) => adapter.setAll(action.payload, currentState))
 );
 
 export function reducer(state: ParksState = initialState, action: Action): ParksState {
